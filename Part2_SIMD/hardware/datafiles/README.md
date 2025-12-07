@@ -3,10 +3,9 @@ datafiles/ — input vectors for simulation
 This directory should contain the input data files used by the testbench and verification scripts for Part2_SIMD.
 
 Expected files (you can add the required number of each file below with appropriate suffixes):
-- weight_4bit.txt   — weight values for 4-bit mode
-- weight_2bit.txt   — weight values for 2-bit mode
-- activation.txt    — activation/input values
-- psum.txt          — expected partial-sum / golden outputs
+- weight_kij0.txt, weight_kij1.txt...         — weight values
+- activation_2bit.txt, activation_4bit.txt    — activation/input values
+- psum_2bit.txt, psum_4bit.txt                — expected partial-sum / golden outputs
 
 Guidelines:
 - Provide separate sets for 2-bit and 4-bit experiments where applicable.
