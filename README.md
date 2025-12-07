@@ -88,8 +88,8 @@ What TAs will do:
 ## Part5_Alpha
 
 For each Alpha submission, include a separate subfolder named like `Alpha1_<Name>` containing:
-- Required source files (follow software/hardware layouts from Part1 depending on the project type).
-- A `README` describing how to validate and run the Alpha submission (commands, expected outputs, and any configuration). This makes TA validation faster and avoids grading delays.
+- Required source files (follow software/hardware layouts from Part1 depending on the alpha type).
+- A `README` describing how to validate and run the Alpha submission (commands, expected outputs, and any configuration). This makes it easier to validate your alphas faster and avoids grading delays.
 
 ---
 
@@ -106,13 +106,8 @@ For each Alpha submission, include a separate subfolder named like `Alpha1_<Name
 ## General notes and best practices
 - Always use relative paths inside `filelist` and other project files; do not include absolute paths with usernames.
 - Name the filelist exactly `filelist` with no extension — plain ASCII text listing relative paths to HDL sources.
-- Include concise READMEs where useful to help graders run your design without assumptions.
+- Include concise READMEs where useful to help run your design without assumptions.
 - If your project requires special steps or non-standard tools, document those steps and include any scripts needed to reproduce the results.
 
-If you'd like, I can also:
-- generate an example `filelist` template for you,
-- or validate your packaged ZIP structure before you submit.
-
----
-
+Filelist Example:
 ![Filelist example](images/filelist_example.svg)
