@@ -1,8 +1,19 @@
-Part4_Poster
+# Part4_Poster - Project Poster
 
-Place your poster and any related materials here.
+## Contents
+- `poster.pdf` - Final project poster presenting the 2D Systolic Array design
 
-Recommended contents:
-- `poster.pdf` — final poster for your project (include authors and affiliation on the poster)
-- `alpha_progress.pdf` — any alpha/progress report you wish to include
-- `README.md` — this file (describe poster authors and any display notes)
+## Description
+This poster covers the complete project including:
+- System architecture overview
+- Performance metrics and results
+- Key design decisions and tradeoffs
+- Comparison with baseline designs
+
+## Team Members
+
+- Achuth Krishna
+- Wuqiong Zhao
+- Yijie He
+- Matthew Jarecky
+- Haochen Jiang

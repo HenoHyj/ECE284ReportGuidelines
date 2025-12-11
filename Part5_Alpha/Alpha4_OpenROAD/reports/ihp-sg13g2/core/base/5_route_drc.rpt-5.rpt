@@ -1,0 +1,126 @@
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[2\].mac_row_instance/col_num\[2\].mac_tile_instance/mac_instance/_010_ net:mac_array_instance/row_num\[2\].mac_row_instance/col_num\[2\].mac_tile_instance/mac_instance/_012_
+	bbox = (793.0600, 1645.8700) - (793.2500, 1645.8800) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5193
+	bbox = (1615.5800, 1554.3100) - (1615.8250, 1554.3200) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:l0_instance/row_num\[7\].fifo_instance/_0323_ net:l0_instance/row_num\[7\].fifo_instance/wr_ptr\[5\]
+	bbox = (1020.1400, 678.3900) - (1020.3400, 678.4100) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:l0_instance/row_num\[7\].fifo_instance/_0323_ net:l0_instance/row_num\[7\].fifo_instance/wr_ptr\[5\]
+	bbox = (1020.1400, 678.4000) - (1020.3400, 678.4100) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:l0_instance/row_num\[7\].fifo_instance/_0323_ net:l0_instance/row_num\[7\].fifo_instance/wr_ptr\[5\]
+	bbox = (1020.3400, 678.3900) - (1020.3800, 678.4100) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:l0_instance/row_num\[7\].fifo_instance/_0323_ net:l0_instance/row_num\[7\].fifo_instance/wr_ptr\[5\]
+	bbox = (1020.0800, 678.3900) - (1020.3400, 678.4100) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:l0_instance/row_num\[7\].fifo_instance/_0323_ net:l0_instance/row_num\[7\].fifo_instance/wr_ptr\[5\]
+	bbox = (1020.0800, 678.4000) - (1020.3400, 678.4100) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:l0_instance/row_num\[7\].fifo_instance/wr_ptr\[5\] net:net6699
+	bbox = (1019.6200, 678.4000) - (1019.7900, 678.4100) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:l0_instance/row_num\[7\].fifo_instance/wr_ptr\[5\]
+	bbox = (1019.8550, 678.6100) - (1020.3400, 678.6200) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net6699
+	bbox = (1019.3150, 678.1550) - (1019.4200, 678.4000) on Layer Metal3
+violation type: Metal Spacing
+	srcs: net:net5207 net:net6606
+	bbox = (1264.3000, 1706.3600) - (1264.4000, 1706.5600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[1\].mac_row_instance/col_num\[6\].mac_tile_instance/mac_instance/_119_ net:mac_array_instance/row_num\[1\].mac_row_instance/col_num\[6\].mac_tile_instance/mac_instance/_120_
+	bbox = (1256.8500, 1706.3600) - (1257.0200, 1706.5600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net4689
+	bbox = (1457.2700, 1563.1300) - (1457.5550, 1563.1400) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5202 net:net6576
+	bbox = (909.5100, 1642.5050) - (909.6950, 1642.7050) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5202 net:net6576
+	bbox = (909.5100, 1642.5200) - (909.6950, 1642.7050) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5202
+	bbox = (916.2950, 1638.7300) - (916.5200, 1638.7400) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[5\].mac_row_instance/col_num\[6\].mac_tile_instance/mac_instance/_016_
+	bbox = (1210.5400, 1600.5100) - (1210.6200, 1600.5200) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[5\].mac_row_instance/col_num\[6\].mac_tile_instance/mac_instance/_016_
+	bbox = (1210.6200, 1600.5100) - (1210.9000, 1600.5200) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[5\].mac_row_instance/col_num\[6\].mac_tile_instance/mac_instance/_084_ net:net4687
+	bbox = (1239.4600, 1630.7600) - (1239.5000, 1630.9600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net4687
+	bbox = (1237.4900, 1630.5400) - (1237.8150, 1630.5500) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[1\].mac_row_instance/col_num\[5\].mac_tile_instance/mac_instance/_016_ net:mac_array_instance/row_num\[1\].mac_row_instance/col_num\[5\].mac_tile_instance/mac_instance/_023_
+	bbox = (1540.6750, 1710.5600) - (1540.7750, 1710.7600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[1\].mac_row_instance/col_num\[5\].mac_tile_instance/mac_instance/_019_ net:mac_array_instance/row_num\[1\].mac_row_instance/col_num\[5\].mac_tile_instance/mac_instance/_023_
+	bbox = (1541.4950, 1710.5600) - (1541.6600, 1710.7600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[6\].mac_row_instance/col_num\[0\].mac_tile_instance/mac_instance/_012_ net:mac_array_instance/row_num\[6\].mac_row_instance/col_num\[0\].mac_tile_instance/mac_instance/_020_
+	bbox = (503.6200, 1555.1600) - (503.8100, 1555.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[6\].mac_row_instance/col_num\[0\].mac_tile_instance/mac_instance/_012_ net:mac_array_instance/row_num\[6\].mac_row_instance/col_num\[0\].mac_tile_instance/mac_instance/_020_
+	bbox = (503.6400, 1555.1600) - (503.8100, 1555.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5165 net:net6354
+	bbox = (554.0150, 1619.8650) - (554.1250, 1620.0500) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5165 net:net6354
+	bbox = (554.0600, 1619.8800) - (554.1250, 1620.0500) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net4677
+	bbox = (550.9000, 1619.6850) - (550.9400, 1619.9350) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net4677
+	bbox = (550.9000, 1619.6850) - (550.9400, 1619.9400) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[7\].mac_row_instance/col_num\[0\].mac_tile_instance/mac_instance/_141_ net:net5165
+	bbox = (549.5000, 1620.0400) - (549.7000, 1620.0500) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5165
+	bbox = (553.5800, 1620.0400) - (553.7900, 1620.0500) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net5165
+	bbox = (553.7900, 1620.0400) - (553.9250, 1620.0500) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:mac_array_instance/row_num\[0\].mac_row_instance/col_num\[7\].mac_tile_instance/mac_instance/_016_ net:mac_array_instance/row_num\[0\].mac_row_instance/col_num\[7\].mac_tile_instance/mac_instance/_019_
+	bbox = (1155.2650, 1774.4950) - (1155.4200, 1774.6000) on Layer Metal2
+violation type: Short
+	srcs: net:net4705 net:net5193
+	bbox = (1614.0950, 1555.1600) - (1614.1200, 1555.3600) on Layer Metal2
+violation type: Short
+	srcs: net:net5193 net:net6522
+	bbox = (1614.8000, 1555.1600) - (1614.8150, 1555.3600) on Layer Metal2
+violation type: Short
+	srcs: net:net4689 net:net5177
+	bbox = (1458.8600, 1555.2800) - (1459.0600, 1555.3600) on Layer Metal2
+violation type: Short
+	srcs: net:net5202 net:net6576
+	bbox = (909.7400, 1642.5200) - (910.0650, 1642.6950) on Layer Metal2
+violation type: Short
+	srcs: net:net5202 net:net6576
+	bbox = (909.7400, 1642.4950) - (910.0650, 1642.6950) on Layer Metal2
+violation type: Short
+	srcs: net:net5202 net:net6576
+	bbox = (909.8650, 1642.5200) - (910.0650, 1642.6950) on Layer Metal2
+violation type: Short
+	srcs: net:net5202 net:net6576
+	bbox = (909.8650, 1642.4950) - (910.0650, 1642.6950) on Layer Metal2
+violation type: Short
+	srcs: net:net5202 net:net6576
+	bbox = (909.6950, 1642.5200) - (910.0650, 1642.6950) on Layer Metal2
+violation type: Short
+	srcs: net:net5202 net:net6576
+	bbox = (909.6950, 1642.5050) - (910.0650, 1642.6950) on Layer Metal2
+violation type: Short
+	srcs: net:mac_array_instance/row_num\[6\].mac_row_instance/col_num\[0\].mac_tile_instance/mac_instance/_012_ net:mac_array_instance/row_num\[6\].mac_row_instance/col_num\[0\].mac_tile_instance/mac_instance/_014_
+	bbox = (504.5300, 1555.1600) - (504.5800, 1555.3600) on Layer Metal2

@@ -1,0 +1,607 @@
+
+==========================================================================
+resizer report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+resizer report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+resizer report_worst_slack
+--------------------------------------------------------------------------
+worst slack 4.23
+
+==========================================================================
+resizer report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: ofifo_instance/col_num[4].fifo_instance/rd_ptr[4]$_SDFFE_PP0P_
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: pmem_instance/gen_2048x64[1].i_cut
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ ofifo_instance/col_num[4].fifo_instance/rd_ptr[4]$_SDFFE_PP0P_/CLK (sg13g2_dfrbp_1)
+     2    0.01    0.03    0.19    0.19 v ofifo_instance/col_num[4].fifo_instance/rd_ptr[4]$_SDFFE_PP0P_/Q (sg13g2_dfrbp_1)
+                                         ofifo_instance/col_num[4].fifo_instance/rd_ptr[4] (net)
+                  0.03    0.00    0.19 v hold24/A (sg13g2_buf_1)
+     2    0.02    0.07    0.10    0.29 v hold24/X (sg13g2_buf_1)
+                                         net24 (net)
+                  0.07    0.00    0.29 v ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1b/_02_/A (sg13g2_buf_8)
+     7    0.04    0.03    0.10    0.39 v ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1b/_02_/X (sg13g2_buf_8)
+                                         ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1b/_00_ (net)
+                  0.03    0.00    0.39 v ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1b/_14_/S (sg13g2_mux2_1)
+     1    0.00    0.03    0.09    0.48 ^ ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1b/_14_/X (sg13g2_mux2_1)
+                                         ofifo_instance/col_num[4].fifo_instance/out_sub1_1[4] (net)
+                  0.03    0.00    0.48 ^ ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1c/_14_/A1 (sg13g2_mux2_1)
+     1    0.01    0.05    0.10    0.58 ^ ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1c/_14_/X (sg13g2_mux2_1)
+                                         ofifo_out[68] (net)
+                  0.06    0.00    0.58 ^ pmem_instance/gen_2048x64[1].i_cut/A_DIN[4] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                                  0.58   data arrival time
+
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00   clock reconvergence pessimism
+                                  0.00 ^ pmem_instance/gen_2048x64[1].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                          0.59    0.59   library hold time
+                                  0.59   data required time
+-----------------------------------------------------------------------------
+                                  0.59   data required time
+                                 -0.58   data arrival time
+-----------------------------------------------------------------------------
+                                 -0.01   slack (VIOLATED)
+
+
+
+==========================================================================
+resizer report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: pmem_instance/gen_2048x64[0].i_cut
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ pmem_instance/gen_2048x64[0].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+     2    0.01    0.05    5.41    5.41 ^ pmem_instance/gen_2048x64[0].i_cut/A_DOUT[7] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                                         pmem_out[7] (net)
+                  0.04    0.00    5.41 ^ max_cap129/A (sg13g2_buf_1)
+     1    0.00    0.02    0.06    5.47 ^ max_cap129/X (sg13g2_buf_1)
+                                         net153 (net)
+                  0.02    0.00    5.47 ^ max_cap7565/A (sg13g2_buf_1)
+     1    0.00    0.02    0.06    5.53 ^ max_cap7565/X (sg13g2_buf_1)
+                                         net7589 (net)
+                  0.02    0.00    5.53 ^ max_cap6788/A (sg13g2_buf_1)
+     1    0.00    0.02    0.06    5.58 ^ max_cap6788/X (sg13g2_buf_1)
+                                         net6812 (net)
+                  0.02    0.00    5.58 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_093_/A1 (sg13g2_mux2_1)
+     1    0.00    0.03    0.07    5.66 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_093_/X (sg13g2_mux2_1)
+                                         mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_021_ (net)
+                  0.03    0.00    5.66 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_/D (sg13g2_dfrbp_1)
+                                  5.66   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_/CLK (sg13g2_dfrbp_1)
+                         -0.11    9.89   library setup time
+                                  9.89   data required time
+-----------------------------------------------------------------------------
+                                  9.89   data required time
+                                 -5.66   data arrival time
+-----------------------------------------------------------------------------
+                                  4.23   slack (MET)
+
+
+
+==========================================================================
+resizer report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: pmem_instance/gen_2048x64[0].i_cut
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ pmem_instance/gen_2048x64[0].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+     2    0.01    0.05    5.41    5.41 ^ pmem_instance/gen_2048x64[0].i_cut/A_DOUT[7] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                                         pmem_out[7] (net)
+                  0.04    0.00    5.41 ^ max_cap129/A (sg13g2_buf_1)
+     1    0.00    0.02    0.06    5.47 ^ max_cap129/X (sg13g2_buf_1)
+                                         net153 (net)
+                  0.02    0.00    5.47 ^ max_cap7565/A (sg13g2_buf_1)
+     1    0.00    0.02    0.06    5.53 ^ max_cap7565/X (sg13g2_buf_1)
+                                         net7589 (net)
+                  0.02    0.00    5.53 ^ max_cap6788/A (sg13g2_buf_1)
+     1    0.00    0.02    0.06    5.58 ^ max_cap6788/X (sg13g2_buf_1)
+                                         net6812 (net)
+                  0.02    0.00    5.58 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_093_/A1 (sg13g2_mux2_1)
+     1    0.00    0.03    0.07    5.66 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_093_/X (sg13g2_mux2_1)
+                                         mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_021_ (net)
+                  0.03    0.00    5.66 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_/D (sg13g2_dfrbp_1)
+                                  5.66   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_/CLK (sg13g2_dfrbp_1)
+                         -0.11    9.89   library setup time
+                                  9.89   data required time
+-----------------------------------------------------------------------------
+                                  9.89   data required time
+                                 -5.66   data arrival time
+-----------------------------------------------------------------------------
+                                  4.23   slack (MET)
+
+
+
+==========================================================================
+resizer report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+max capacitance
+
+Pin                                    Limit     Cap   Slack
+------------------------------------------------------------
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[31]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[29]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[28]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[30]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[26]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[27]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[24]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[25]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[21]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[23]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[20]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[19]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[22]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[18]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[17]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[16]    0.00    0.03   -0.03 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[31]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[29]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[9]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[28]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[12]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[30]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[11]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[15]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[26]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[18]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[13]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[27]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[7]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[16]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[8]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[2]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[13]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[4]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[24]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[14]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[25]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[10]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[5]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[3]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[21]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[14]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[10]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[1]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[6]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[8]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[23]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[19]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[5]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[20]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[0]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[22]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[15]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[17]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[21]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[19]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[12]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[22]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[6]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[9]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[20]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[23]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[26]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[2]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[30]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[24]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[4]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[18]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[0].i_cut/A_DOUT[0]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[17]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[29]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[25]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[7]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[1]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[31]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[11]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[16]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[27]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[3]    0.00    0.02   -0.02 (VIOLATED)
+xmem_instance/gen_512x32[1].i_cut/A_DOUT[28]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[9]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[12]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[11]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[15]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[18]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[13]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[2]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[4]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[1]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[5]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[0]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[7]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[16]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[7]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[3]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[9]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[6]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[8]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[8]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[11]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[13]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[2]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[4]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[14]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[10]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[5]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[14]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[10]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[10]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[3]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[6]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[12]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[1]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[8]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[19]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[13]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[5]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[14]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[0]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[22]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[15]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[17]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[21]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[15]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[9]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[2]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[16]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[12]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[17]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[18]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[20]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[29]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[28]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[6]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[23]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[26]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[30]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[24]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[19]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[4]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[2].i_cut/A_DOUT[0]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[21]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[31]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[20]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[1]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[7]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[25]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[50]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[48]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[23]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[22]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[27]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[3]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[24]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[51]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[49]    0.00    0.01   -0.01 (VIOLATED)
+xmem_instance/gen_512x32[3].i_cut/A_DOUT[11]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[52]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[25]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[62]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[53]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[54]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[26]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[55]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[61]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[0]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[28]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[56]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[27]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[58]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[29]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[63]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[31]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[57]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[32]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[55]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[1]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[30]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[56]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[33]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[45]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[33]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[54]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[40]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[41]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[34]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[57]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[39]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[37]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[43]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[59]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[42]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[46]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[11]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[35]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[61]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[38]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[31]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[6]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[47]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[43]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[40]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[48]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[58]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[60]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[50]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[32]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[46]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[36]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[62]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[51]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[44]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[47]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[24]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[60]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[39]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[53]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[52]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[4]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[35]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[45]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[30]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[34]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[12]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[13]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[16]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[49]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[44]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[3]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[28]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[2]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[59]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[0].i_cut/A_DOUT[63]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[23]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[38]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[8]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[10]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[21]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[9]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[7]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[37]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[36]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[25]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[18]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[22]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[14]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[5]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[26]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[19]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[17]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[29]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[42]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[41]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[20]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[27]    0.00    0.01   -0.01 (VIOLATED)
+pmem_instance/gen_2048x64[1].i_cut/A_DOUT[15]    0.00    0.01   -0.01 (VIOLATED)
+
+
+==========================================================================
+resizer max_slew_check_slack
+--------------------------------------------------------------------------
+0.2612115740776062
+
+==========================================================================
+resizer max_slew_check_limit
+--------------------------------------------------------------------------
+0.476000040769577
+
+==========================================================================
+resizer max_slew_check_slack_limit
+--------------------------------------------------------------------------
+0.5488
+
+==========================================================================
+resizer max_fanout_check_slack
+--------------------------------------------------------------------------
+0.0
+
+==========================================================================
+resizer max_fanout_check_limit
+--------------------------------------------------------------------------
+8.0
+
+==========================================================================
+resizer max_fanout_check_slack_limit
+--------------------------------------------------------------------------
+0.0000
+
+==========================================================================
+resizer max_capacitance_check_slack
+--------------------------------------------------------------------------
+-0.03319229930639267
+
+==========================================================================
+resizer max_capacitance_check_limit
+--------------------------------------------------------------------------
+6.40000002321596e-14
+
+==========================================================================
+resizer max_capacitance_check_slack_limit
+--------------------------------------------------------------------------
+-518629674781.0596
+
+==========================================================================
+resizer max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+resizer max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+resizer max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 256
+
+==========================================================================
+resizer setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+resizer hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 6
+
+==========================================================================
+resizer report_checks -path_delay max reg to reg
+--------------------------------------------------------------------------
+Startpoint: pmem_instance/gen_2048x64[0].i_cut
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ pmem_instance/gen_2048x64[0].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+   5.41    5.41 ^ pmem_instance/gen_2048x64[0].i_cut/A_DOUT[7] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+   0.06    5.47 ^ max_cap129/X (sg13g2_buf_1)
+   0.06    5.53 ^ max_cap7565/X (sg13g2_buf_1)
+   0.06    5.58 ^ max_cap6788/X (sg13g2_buf_1)
+   0.07    5.66 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_093_/X (sg13g2_mux2_1)
+   0.00    5.66 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_/D (sg13g2_dfrbp_1)
+           5.66   data arrival time
+
+  10.00   10.00   clock core_clock (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[7]$_DFFE_PP_/CLK (sg13g2_dfrbp_1)
+  -0.11    9.89   library setup time
+           9.89   data required time
+---------------------------------------------------------
+           9.89   data required time
+          -5.66   data arrival time
+---------------------------------------------------------
+           4.23   slack (MET)
+
+
+
+==========================================================================
+resizer report_checks -path_delay min reg to reg
+--------------------------------------------------------------------------
+Startpoint: ofifo_instance/col_num[4].fifo_instance/rd_ptr[4]$_SDFFE_PP0P_
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: pmem_instance/gen_2048x64[1].i_cut
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ ofifo_instance/col_num[4].fifo_instance/rd_ptr[4]$_SDFFE_PP0P_/CLK (sg13g2_dfrbp_1)
+   0.19    0.19 v ofifo_instance/col_num[4].fifo_instance/rd_ptr[4]$_SDFFE_PP0P_/Q (sg13g2_dfrbp_1)
+   0.10    0.29 v hold24/X (sg13g2_buf_1)
+   0.10    0.39 v ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1b/_02_/X (sg13g2_buf_8)
+   0.09    0.48 ^ ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1b/_14_/X (sg13g2_mux2_1)
+   0.10    0.58 ^ ofifo_instance/col_num[4].fifo_instance/fifo_mux_2_1c/_14_/X (sg13g2_mux2_1)
+   0.00    0.58 ^ pmem_instance/gen_2048x64[1].i_cut/A_DIN[4] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+           0.58   data arrival time
+
+   0.00    0.00   clock core_clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ pmem_instance/gen_2048x64[1].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+   0.59    0.59   library hold time
+           0.59   data required time
+---------------------------------------------------------
+           0.59   data required time
+          -0.58   data arrival time
+---------------------------------------------------------
+          -0.01   slack (VIOLATED)
+
+
+
+==========================================================================
+resizer critical path target clock latency max path
+--------------------------------------------------------------------------
+0.0000
+
+==========================================================================
+resizer critical path target clock latency min path
+--------------------------------------------------------------------------
+0.0000
+
+==========================================================================
+resizer critical path source clock latency min path
+--------------------------------------------------------------------------
+0.0000
+
+==========================================================================
+resizer critical path delay
+--------------------------------------------------------------------------
+5.6564
+
+==========================================================================
+resizer critical path slack
+--------------------------------------------------------------------------
+4.2303
+
+==========================================================================
+resizer slack div critical path delay
+--------------------------------------------------------------------------
+74.787851
+
+==========================================================================
+resizer report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             6.52e-02   1.01e-05   5.65e-06   6.52e-02  82.6%
+Combinational          1.61e-04   7.31e-04   1.11e-05   9.03e-04   1.1%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  1.28e-02   0.00e+00   3.96e-06   1.28e-02  16.2%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  7.82e-02   7.41e-04   2.07e-05   7.90e-02 100.0%
+                          99.0%       0.9%       0.0%

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Build and run the Part 1 core testbench in-place
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
+iverilog -g2012 -DFUNCTIONAL -s core_tb -o core_tb.vvp ./*.v ../verilog/*.v 
+vvp core_tb.vvp

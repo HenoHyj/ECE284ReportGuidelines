@@ -1,0 +1,581 @@
+
+26. Printing statistics.
+
+=== $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac ===
+
+   Number of wires:                229
+   Number of wire bits:            265
+   Number of public wires:           4
+   Number of public wire bits:      40
+   Number of ports:                  4
+   Number of port bits:             40
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                241
+     sg13g2_a21o_1                   7
+     sg13g2_a21o_2                   1
+     sg13g2_a21oi_1                 21
+     sg13g2_a221oi_1                 6
+     sg13g2_a22oi_1                  9
+     sg13g2_and2_1                   8
+     sg13g2_and2_2                   2
+     sg13g2_and3_1                   5
+     sg13g2_and4_1                   1
+     sg13g2_and4_2                   1
+     sg13g2_buf_1                    1
+     sg13g2_buf_16                   1
+     sg13g2_buf_2                    1
+     sg13g2_buf_4                    2
+     sg13g2_buf_8                    4
+     sg13g2_inv_1                   10
+     sg13g2_nand2_1                 20
+     sg13g2_nand2_2                  2
+     sg13g2_nand2b_1                 8
+     sg13g2_nand3_1                 11
+     sg13g2_nand3b_1                 7
+     sg13g2_nand4_1                  5
+     sg13g2_nor2_1                  20
+     sg13g2_nor2_2                   1
+     sg13g2_nor2b_1                  2
+     sg13g2_nor3_1                  11
+     sg13g2_nor4_1                   2
+     sg13g2_nor4_2                   1
+     sg13g2_o21ai_1                 17
+     sg13g2_or2_1                    2
+     sg13g2_or2_2                    1
+     sg13g2_or3_1                    3
+     sg13g2_or3_2                    3
+     sg13g2_or4_2                    2
+     sg13g2_xnor2_1                 33
+     sg13g2_xor2_1                  10
+
+   Chip area for module '$paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac': 2628.725400
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_row ===
+
+   Number of wires:                 47
+   Number of wire bits:            312
+   Number of public wires:          47
+   Number of public wire bits:     312
+   Number of ports:                  7
+   Number of port bits:            272
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_tile      8
+
+   Area for cell type $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_tile is unknown!
+
+=== $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_tile ===
+
+   Number of wires:                 93
+   Number of wire bits:            131
+   Number of public wires:          29
+   Number of public wire bits:      67
+   Number of ports:                  8
+   Number of port bits:             46
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 65
+     $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac      1
+     sg13g2_a21oi_1                  1
+     sg13g2_and2_2                   1
+     sg13g2_buf_16                   1
+     sg13g2_buf_8                    1
+     sg13g2_dfrbp_1                 27
+     sg13g2_inv_1                    2
+     sg13g2_mux2_1                  24
+     sg13g2_nand2_1                  2
+     sg13g2_nand3_1                  1
+     sg13g2_nor2b_2                  1
+     sg13g2_o21ai_1                  2
+     sg13g2_tiehi                    1
+
+   Area for cell type $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac is unknown!
+
+   Chip area for module '$paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_tile': 1870.646400
+     of which used for sequential elements: 1273.708800 (68.09%)
+
+=== $paramod$33573442d00eaca54542d4a498ab4cb694d2d3cd\sfp ===
+
+   Number of wires:                 12
+   Number of wire bits:            266
+   Number of public wires:           8
+   Number of public wire bits:     262
+   Number of ports:                  8
+   Number of port bits:            262
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                132
+     sg13g2_buf_1                  128
+     sg13g2_dfrbp_1                  1
+     sg13g2_nor2b_2                  1
+     sg13g2_tiehi                    1
+     sg13g2_tielo                    1
+
+   Chip area for module '$paramod$33573442d00eaca54542d4a498ab4cb694d2d3cd\sfp': 1003.363200
+     of which used for sequential elements: 47.174400 (4.70%)
+
+=== $paramod$759f73c735dccb3cfd417b7d108b5cbea64d2016\ofifo ===
+
+   Number of wires:                 35
+   Number of wire bits:            296
+   Number of public wires:          26
+   Number of public wire bits:     287
+   Number of ports:                  9
+   Number of port bits:            270
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $paramod\fifo_depth64\bw=s32'00000000000000000000000000010000      8
+     sg13g2_and2_1                   1
+     sg13g2_dfrbp_1                  1
+     sg13g2_nand2_1                  1
+     sg13g2_nand4_1                  2
+     sg13g2_nor2b_1                  1
+     sg13g2_nor4_1                   1
+     sg13g2_nor4_2                   3
+     sg13g2_or2_1                    1
+     sg13g2_tiehi                    1
+
+   Area for cell type $paramod\fifo_depth64\bw=s32'00000000000000000000000000010000 is unknown!
+
+   Chip area for module '$paramod$759f73c735dccb3cfd417b7d108b5cbea64d2016\ofifo': 186.883200
+     of which used for sequential elements: 47.174400 (25.24%)
+
+=== $paramod$901963f8b21a64ee68a0bd20e6e7883f04f74f3a\l0 ===
+
+   Number of wires:                 53
+   Number of wire bits:            115
+   Number of public wires:          32
+   Number of public wire bits:      94
+   Number of ports:                  8
+   Number of port bits:             70
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 31
+     $paramod\fifo_depth64\bw=s32'00000000000000000000000000000100      8
+     sg13g2_dfrbp_1                  8
+     sg13g2_nand2_1                  1
+     sg13g2_nand4_1                  2
+     sg13g2_nor2b_1                  8
+     sg13g2_nor4_2                   2
+     sg13g2_or2_1                    1
+     sg13g2_tiehi                    1
+
+   Area for cell type $paramod\fifo_depth64\bw=s32'00000000000000000000000000000100 is unknown!
+
+   Chip area for module '$paramod$901963f8b21a64ee68a0bd20e6e7883f04f74f3a\l0': 538.876800
+     of which used for sequential elements: 377.395200 (70.03%)
+
+=== $paramod$eba6d0e3c28e4c1ff90362ee2e62da6ed99beedf\mac_array ===
+
+   Number of wires:                992
+   Number of wire bits:           1285
+   Number of public wires:         975
+   Number of public wire bits:    1268
+   Number of ports:                  7
+   Number of port bits:            300
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 25
+     $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_row      8
+     sg13g2_dfrbp_1                 16
+     sg13g2_tiehi                    1
+
+   Area for cell type $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_row is unknown!
+
+   Chip area for module '$paramod$eba6d0e3c28e4c1ff90362ee2e62da6ed99beedf\mac_array': 762.048000
+     of which used for sequential elements: 754.790400 (99.05%)
+
+=== $paramod\fifo_depth64\bw=s32'00000000000000000000000000000100 ===
+
+   Number of wires:               1061
+   Number of wire bits:           1067
+   Number of public wires:         303
+   Number of public wire bits:     309
+   Number of ports:                  9
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                767
+     $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000000100      4
+     $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100      3
+     sg13g2_a21o_1                   2
+     sg13g2_a21oi_1                  7
+     sg13g2_a21oi_2                  5
+     sg13g2_and2_1                  25
+     sg13g2_and2_2                   2
+     sg13g2_and3_1                   2
+     sg13g2_and4_2                   1
+     sg13g2_buf_1                   29
+     sg13g2_buf_16                   3
+     sg13g2_buf_2                   20
+     sg13g2_buf_4                    3
+     sg13g2_buf_8                   15
+     sg13g2_dfrbp_1                270
+     sg13g2_inv_1                    3
+     sg13g2_inv_4                    1
+     sg13g2_mux2_1                 259
+     sg13g2_nand2_1                  7
+     sg13g2_nand2_2                 40
+     sg13g2_nand2b_1                 1
+     sg13g2_nand2b_2                 4
+     sg13g2_nand3_1                  5
+     sg13g2_nand3b_1                 1
+     sg13g2_nand4_1                  2
+     sg13g2_nor2_1                  12
+     sg13g2_nor2_2                   7
+     sg13g2_nor2b_1                  3
+     sg13g2_nor3_1                   2
+     sg13g2_nor3_2                   8
+     sg13g2_nor4_2                   2
+     sg13g2_o21ai_1                  1
+     sg13g2_or2_1                    1
+     sg13g2_tiehi                    1
+     sg13g2_xnor2_1                  9
+     sg13g2_xor2_1                   7
+
+   Area for cell type $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000000100 is unknown!
+   Area for cell type $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100 is unknown!
+
+   Chip area for module '$paramod\fifo_depth64\bw=s32'00000000000000000000000000000100': 20114.438400
+     of which used for sequential elements: 12737.088000 (63.32%)
+
+=== $paramod\fifo_depth64\bw=s32'00000000000000000000000000010000 ===
+
+   Number of wires:               3639
+   Number of wire bits:           3669
+   Number of public wires:        1129
+   Number of public wire bits:    1159
+   Number of ports:                  9
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2505
+     $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000010000      4
+     $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000      3
+     sg13g2_a21o_1                   1
+     sg13g2_a21oi_1                 10
+     sg13g2_a21oi_2                  2
+     sg13g2_and2_1                  14
+     sg13g2_and2_2                   2
+     sg13g2_and3_1                   2
+     sg13g2_and4_1                   2
+     sg13g2_buf_1                  114
+     sg13g2_buf_16                  32
+     sg13g2_buf_2                    2
+     sg13g2_buf_4                   35
+     sg13g2_buf_8                   88
+     sg13g2_dfrbp_1               1038
+     sg13g2_inv_1                    1
+     sg13g2_inv_2                    1
+     sg13g2_inv_4                    1
+     sg13g2_mux2_1                1028
+     sg13g2_nand2_1                 10
+     sg13g2_nand2_2                 32
+     sg13g2_nand2b_1                 7
+     sg13g2_nand2b_2                 6
+     sg13g2_nand3_1                  5
+     sg13g2_nand4_1                  2
+     sg13g2_nor2_1                  11
+     sg13g2_nor2_2                   9
+     sg13g2_nor2b_1                 13
+     sg13g2_nor2b_2                  1
+     sg13g2_nor3_1                   1
+     sg13g2_nor3_2                   9
+     sg13g2_nor4_2                   3
+     sg13g2_tiehi                    1
+     sg13g2_xnor2_1                  8
+     sg13g2_xor2_1                   7
+
+   Area for cell type $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000010000 is unknown!
+   Area for cell type $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000 is unknown!
+
+   Chip area for module '$paramod\fifo_depth64\bw=s32'00000000000000000000000000010000': 74252.505600
+     of which used for sequential elements: 48967.027200 (65.95%)
+
+=== $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000000100 ===
+
+   Number of wires:                 26
+   Number of wire bits:             80
+   Number of public wires:          26
+   Number of public wire bits:      80
+   Number of ports:                 18
+   Number of port bits:             72
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100      1
+     $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000000100      2
+
+   Area for cell type $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100 is unknown!
+   Area for cell type $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000000100 is unknown!
+
+=== $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000010000 ===
+
+   Number of wires:                 50
+   Number of wire bits:            308
+   Number of public wires:          50
+   Number of public wire bits:     308
+   Number of ports:                 18
+   Number of port bits:            276
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000      1
+     $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000010000      2
+
+   Area for cell type $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000 is unknown!
+   Area for cell type $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000010000 is unknown!
+
+=== $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100 ===
+
+   Number of wires:                  4
+   Number of wire bits:             13
+   Number of public wires:           4
+   Number of public wire bits:      13
+   Number of ports:                  4
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     sg13g2_mux2_1                   4
+
+   Chip area for module '$paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100': 72.576000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000 ===
+
+   Number of wires:                  6
+   Number of wire bits:             51
+   Number of public wires:           4
+   Number of public wire bits:      49
+   Number of ports:                  4
+   Number of port bits:             49
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 18
+     sg13g2_buf_16                   2
+     sg13g2_mux2_1                  16
+
+   Chip area for module '$paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000': 381.024000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000000100 ===
+
+   Number of wires:                 34
+   Number of wire bits:             63
+   Number of public wires:          34
+   Number of public wire bits:      63
+   Number of ports:                 10
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100      7
+
+   Area for cell type $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100 is unknown!
+
+=== $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000010000 ===
+
+   Number of wires:                106
+   Number of wire bits:            243
+   Number of public wires:         106
+   Number of public wire bits:     243
+   Number of ports:                 10
+   Number of port bits:            147
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000      7
+
+   Area for cell type $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000 is unknown!
+
+=== core ===
+
+   Number of wires:                615
+   Number of wire bits:            806
+   Number of public wires:         596
+   Number of public wire bits:     787
+   Number of ports:                  6
+   Number of port bits:            197
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                154
+     $paramod$33573442d00eaca54542d4a498ab4cb694d2d3cd\sfp      1
+     $paramod$759f73c735dccb3cfd417b7d108b5cbea64d2016\ofifo      1
+     $paramod$901963f8b21a64ee68a0bd20e6e7883f04f74f3a\l0      1
+     $paramod$eba6d0e3c28e4c1ff90362ee2e62da6ed99beedf\mac_array      1
+     sg13g2_buf_16                   2
+     sg13g2_buf_4                    1
+     sg13g2_buf_8                   12
+     sg13g2_mux2_1                 128
+     sg13g2_nand2_1                  1
+     sg13g2_nand3_1                  1
+     sg13g2_nand4_1                  1
+     sg13g2_nor3_1                   1
+     sg13g2_tielo                    1
+     sram_128b_w2048                 1
+     sram_32b_w2048                  1
+
+   Area for cell type $paramod$33573442d00eaca54542d4a498ab4cb694d2d3cd\sfp is unknown!
+   Area for cell type $paramod$759f73c735dccb3cfd417b7d108b5cbea64d2016\ofifo is unknown!
+   Area for cell type $paramod$901963f8b21a64ee68a0bd20e6e7883f04f74f3a\l0 is unknown!
+   Area for cell type $paramod$eba6d0e3c28e4c1ff90362ee2e62da6ed99beedf\mac_array is unknown!
+   Area for cell type \sram_128b_w2048 is unknown!
+   Area for cell type \sram_32b_w2048 is unknown!
+
+   Chip area for module '\core': 2754.259200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== sram_128b_w2048 ===
+
+   Number of wires:                 10
+   Number of wire bits:            274
+   Number of public wires:           6
+   Number of public wire bits:     270
+   Number of ports:                  6
+   Number of port bits:            270
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  6
+     RM_IHPSG13_1P_2048x64_c2_bm_bist      2
+     sg13g2_inv_2                    2
+     sg13g2_tiehi                    1
+     sg13g2_tielo                    1
+
+   Chip area for module '\sram_128b_w2048': 983296.262400
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== sram_32b_w2048 ===
+
+   Number of wires:                151
+   Number of wire bits:            223
+   Number of public wires:         134
+   Number of public wire bits:     206
+   Number of ports:                  6
+   Number of port bits:             78
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 53
+     RM_IHPSG13_1P_512x32_c2_bm_bist      4
+     sg13g2_buf_16                   4
+     sg13g2_buf_4                    1
+     sg13g2_buf_8                    3
+     sg13g2_inv_1                    3
+     sg13g2_mux4_1                  32
+     sg13g2_nor3_1                   4
+     sg13g2_tiehi                    1
+     sg13g2_tielo                    1
+
+   Chip area for module '\sram_32b_w2048': 320432.716800
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== design hierarchy ===
+
+   core                              1
+     $paramod$33573442d00eaca54542d4a498ab4cb694d2d3cd\sfp      1
+     $paramod$759f73c735dccb3cfd417b7d108b5cbea64d2016\ofifo      1
+       $paramod\fifo_depth64\bw=s32'00000000000000000000000000010000      8
+         $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000010000      4
+           $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000      1
+           $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000010000      2
+             $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000      7
+         $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000010000      3
+     $paramod$901963f8b21a64ee68a0bd20e6e7883f04f74f3a\l0      1
+       $paramod\fifo_depth64\bw=s32'00000000000000000000000000000100      8
+         $paramod\fifo_mux_16_1\bw=s32'00000000000000000000000000000100      4
+           $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100      1
+           $paramod\fifo_mux_8_1\bw=s32'00000000000000000000000000000100      2
+             $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100      7
+         $paramod\fifo_mux_2_1\bw=s32'00000000000000000000000000000100      3
+     $paramod$eba6d0e3c28e4c1ff90362ee2e62da6ed99beedf\mac_array      1
+       $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_row      8
+         $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac_tile      8
+           $paramod$1f7bae5c412c57833780abd5cf9a0d3525d77418\mac      1
+     sram_128b_w2048                 1
+     sram_32b_w2048                  1
+
+   Number of wires:              76884
+   Number of wire bits:         133249
+   Number of public wires:       31145
+   Number of public wire bits:   87510
+   Number of ports:               7482
+   Number of port bits:          63847
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              57063
+     RM_IHPSG13_1P_2048x64_c2_bm_bist      2
+     RM_IHPSG13_1P_512x32_c2_bm_bist      4
+     sg13g2_a21o_1                 472
+     sg13g2_a21o_2                  64
+     sg13g2_a21oi_1               1544
+     sg13g2_a21oi_2                 56
+     sg13g2_a221oi_1               384
+     sg13g2_a22oi_1                576
+     sg13g2_and2_1                 825
+     sg13g2_and2_2                 224
+     sg13g2_and3_1                 352
+     sg13g2_and4_1                  80
+     sg13g2_and4_2                  72
+     sg13g2_buf_1                 1336
+     sg13g2_buf_16                1422
+     sg13g2_buf_2                  240
+     sg13g2_buf_4                  434
+     sg13g2_buf_8                 1159
+     sg13g2_dfrbp_1              12218
+     sg13g2_inv_1                  803
+     sg13g2_inv_2                   10
+     sg13g2_inv_4                   16
+     sg13g2_mux2_1               22040
+     sg13g2_mux4_1                  32
+     sg13g2_nand2_1               1547
+     sg13g2_nand2_2                704
+     sg13g2_nand2b_1               576
+     sg13g2_nand2b_2                80
+     sg13g2_nand3_1                849
+     sg13g2_nand3b_1               456
+     sg13g2_nand4_1                357
+     sg13g2_nor2_1                1464
+     sg13g2_nor2_2                 192
+     sg13g2_nor2b_1                265
+     sg13g2_nor2b_2                 73
+     sg13g2_nor3_1                 733
+     sg13g2_nor3_2                 136
+     sg13g2_nor4_1                 129
+     sg13g2_nor4_2                 109
+     sg13g2_o21ai_1               1224
+     sg13g2_or2_1                  138
+     sg13g2_or2_2                   64
+     sg13g2_or3_1                  192
+     sg13g2_or3_2                  192
+     sg13g2_or4_2                  128
+     sg13g2_tiehi                   86
+     sg13g2_tielo                    4
+     sg13g2_xnor2_1               2248
+     sg13g2_xor2_1                 752
+
+   Chip area for top module '\core': 2580484.156800
+     of which used for sequential elements: 0.000000 (0.00%)
+

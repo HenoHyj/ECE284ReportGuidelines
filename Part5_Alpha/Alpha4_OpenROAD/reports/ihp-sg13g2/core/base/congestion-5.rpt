@@ -1,0 +1,348 @@
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2390.4000) - (1317.6000, 2397.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2145.6000) - (1317.6000, 2152.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2181.6000) - (1317.6000, 2188.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2455.2000) - (1317.6000, 2462.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2167.2000) - (1317.6000, 2174.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1944.0000) - (1317.6000, 1951.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2073.6000) - (1317.6000, 2080.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1922.4000) - (1317.6000, 1929.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2152.8000) - (1317.6000, 2160.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1965.6000) - (1317.6000, 1972.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2426.4000) - (1317.6000, 2433.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2196.0000) - (1317.6000, 2203.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2138.4000) - (1317.6000, 2145.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2037.6000) - (1317.6000, 2044.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2332.8000) - (1317.6000, 2340.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2282.4000) - (1317.6000, 2289.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2268.0000) - (1317.6000, 2275.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2052.0000) - (1317.6000, 2059.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2030.4000) - (1317.6000, 2037.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2102.4000) - (1317.6000, 2109.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2023.2000) - (1317.6000, 2030.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2253.6000) - (1317.6000, 2260.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2347.2000) - (1317.6000, 2354.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2289.6000) - (1317.6000, 2296.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2419.2000) - (1317.6000, 2426.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2160.0000) - (1317.6000, 2167.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2505.6000) - (1317.6000, 2512.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2397.6000) - (1317.6000, 2404.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2239.2000) - (1317.6000, 2246.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2498.4000) - (1317.6000, 2505.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2210.4000) - (1317.6000, 2217.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2109.6000) - (1317.6000, 2116.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2275.2000) - (1317.6000, 2282.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1980.0000) - (1317.6000, 1987.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2368.8000) - (1317.6000, 2376.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2246.4000) - (1317.6000, 2253.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2095.2000) - (1317.6000, 2102.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2354.4000) - (1317.6000, 2361.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2008.8000) - (1317.6000, 2016.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1951.2000) - (1317.6000, 1958.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2484.0000) - (1317.6000, 2491.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2174.4000) - (1317.6000, 2181.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2476.8000) - (1317.6000, 2484.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1900.8000) - (1317.6000, 1908.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1929.6000) - (1317.6000, 1936.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2016.0000) - (1317.6000, 2023.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2088.0000) - (1317.6000, 2095.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2066.4000) - (1317.6000, 2073.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1987.2000) - (1317.6000, 1994.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2361.6000) - (1317.6000, 2368.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2044.8000) - (1317.6000, 2052.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2311.2000) - (1317.6000, 2318.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2080.8000) - (1317.6000, 2088.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2412.0000) - (1317.6000, 2419.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2001.6000) - (1317.6000, 2008.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2440.8000) - (1317.6000, 2448.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2325.6000) - (1317.6000, 2332.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2296.8000) - (1317.6000, 2304.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2383.2000) - (1317.6000, 2390.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1886.4000) - (1317.6000, 1893.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2433.6000) - (1317.6000, 2440.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2304.0000) - (1317.6000, 2311.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2260.8000) - (1317.6000, 2268.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2217.6000) - (1317.6000, 2224.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2404.8000) - (1317.6000, 2412.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1908.0000) - (1317.6000, 1915.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1893.6000) - (1317.6000, 1900.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2203.2000) - (1317.6000, 2210.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2491.2000) - (1317.6000, 2498.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1958.4000) - (1317.6000, 1965.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2188.8000) - (1317.6000, 2196.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2059.2000) - (1317.6000, 2066.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2469.6000) - (1317.6000, 2476.8000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2124.0000) - (1317.6000, 2131.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1915.2000) - (1317.6000, 1922.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1936.8000) - (1317.6000, 1944.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2448.0000) - (1317.6000, 2455.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2131.2000) - (1317.6000, 2138.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1972.8000) - (1317.6000, 1980.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2224.8000) - (1317.6000, 2232.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2232.0000) - (1317.6000, 2239.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2340.0000) - (1317.6000, 2347.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2318.4000) - (1317.6000, 2325.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 1994.4000) - (1317.6000, 2001.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2462.4000) - (1317.6000, 2469.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2376.0000) - (1317.6000, 2383.2000) on Layer -
+violation type: Vertical congestion
+	srcs: net:net79
+	comment: capacity:0 usage:1 overflow:1
+	bbox = (1310.4000, 2116.8000) - (1317.6000, 2124.0000) on Layer -

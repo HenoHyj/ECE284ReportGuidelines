@@ -1,0 +1,156 @@
+
+==========================================================================
+floorplan final report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+floorplan final report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+floorplan final report_worst_slack
+--------------------------------------------------------------------------
+worst slack 4.42
+
+==========================================================================
+floorplan final report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: ofifo_instance/col_num[0].fifo_instance/q63[0]$_DFFE_PP_
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: pmem_instance/gen_2048x64[0].i_cut
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ ofifo_instance/col_num[0].fifo_instance/q63[0]$_DFFE_PP_/CLK (sg13g2_dfrbp_1)
+     2    0.00    0.03    0.20    0.20 ^ ofifo_instance/col_num[0].fifo_instance/q63[0]$_DFFE_PP_/Q (sg13g2_dfrbp_1)
+                                         ofifo_instance/col_num[0].fifo_instance/q63[0] (net)
+                  0.03    0.00    0.20 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/fifo_mux_2_1d/_04_/A1 (sg13g2_mux2_1)
+     1    0.00    0.02    0.07    0.27 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/fifo_mux_2_1d/_04_/X (sg13g2_mux2_1)
+                                         ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/out_sub0_3[0] (net)
+                  0.02    0.00    0.27 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/fifo_mux_2_1f/_04_/A1 (sg13g2_mux2_1)
+     1    0.00    0.02    0.07    0.34 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/fifo_mux_2_1f/_04_/X (sg13g2_mux2_1)
+                                         ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/out_sub1_1[0] (net)
+                  0.02    0.00    0.34 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/fifo_mux_2_1g/_04_/A1 (sg13g2_mux2_1)
+     1    0.00    0.02    0.07    0.41 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_8_1b/fifo_mux_2_1g/_04_/X (sg13g2_mux2_1)
+                                         ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/out_sub1[0] (net)
+                  0.02    0.00    0.41 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_2_1a/_04_/A1 (sg13g2_mux2_1)
+     1    0.00    0.02    0.07    0.47 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_16_1d/mux_2_1a/_04_/X (sg13g2_mux2_1)
+                                         ofifo_instance/col_num[0].fifo_instance/out_sub0_3[0] (net)
+                  0.02    0.00    0.47 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_2_1b/_04_/A1 (sg13g2_mux2_1)
+     1    0.00    0.02    0.07    0.54 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_2_1b/_04_/X (sg13g2_mux2_1)
+                                         ofifo_instance/col_num[0].fifo_instance/out_sub1_1[0] (net)
+                  0.02    0.00    0.54 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_2_1c/_04_/A1 (sg13g2_mux2_1)
+     1    0.00    0.03    0.08    0.62 ^ ofifo_instance/col_num[0].fifo_instance/fifo_mux_2_1c/_04_/X (sg13g2_mux2_1)
+                                         ofifo_out[0] (net)
+                  0.04    0.00    0.62 ^ pmem_instance/gen_2048x64[0].i_cut/A_DIN[0] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                                  0.62   data arrival time
+
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00   clock reconvergence pessimism
+                                  0.00 ^ pmem_instance/gen_2048x64[0].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                          0.60    0.60   library hold time
+                                  0.60   data required time
+-----------------------------------------------------------------------------
+                                  0.60   data required time
+                                 -0.62   data arrival time
+-----------------------------------------------------------------------------
+                                  0.01   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: pmem_instance/gen_2048x64[0].i_cut
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[1]$_DFFE_PP_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ pmem_instance/gen_2048x64[0].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+     2    0.00    0.04    5.40    5.40 ^ pmem_instance/gen_2048x64[0].i_cut/A_DOUT[1] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                                         pmem_out[1] (net)
+                  0.02    0.00    5.40 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_087_/A1 (sg13g2_mux2_1)
+     1    0.00    0.03    0.07    5.47 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_087_/X (sg13g2_mux2_1)
+                                         mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_015_ (net)
+                  0.03    0.00    5.47 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[1]$_DFFE_PP_/D (sg13g2_dfrbp_1)
+                                  5.47   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[1]$_DFFE_PP_/CLK (sg13g2_dfrbp_1)
+                         -0.11    9.89   library setup time
+                                  9.89   data required time
+-----------------------------------------------------------------------------
+                                  9.89   data required time
+                                 -5.47   data arrival time
+-----------------------------------------------------------------------------
+                                  4.42   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: pmem_instance/gen_2048x64[0].i_cut
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[1]$_DFFE_PP_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ pmem_instance/gen_2048x64[0].i_cut/A_CLK (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+     2    0.00    0.04    5.40    5.40 ^ pmem_instance/gen_2048x64[0].i_cut/A_DOUT[1] (RM_IHPSG13_1P_2048x64_c2_bm_bist)
+                                         pmem_out[1] (net)
+                  0.02    0.00    5.40 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_087_/A1 (sg13g2_mux2_1)
+     1    0.00    0.03    0.07    5.47 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_087_/X (sg13g2_mux2_1)
+                                         mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/_015_ (net)
+                  0.03    0.00    5.47 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[1]$_DFFE_PP_/D (sg13g2_dfrbp_1)
+                                  5.47   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ mac_array_instance/row_num[0].mac_row_instance/col_num[0].mac_tile_instance/c_q[1]$_DFFE_PP_/CLK (sg13g2_dfrbp_1)
+                         -0.11    9.89   library setup time
+                                  9.89   data required time
+-----------------------------------------------------------------------------
+                                  9.89   data required time
+                                 -5.47   data arrival time
+-----------------------------------------------------------------------------
+                                  4.42   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             6.52e-02   2.58e-05   5.65e-06   6.53e-02  83.3%
+Combinational          1.64e-04   8.22e-05   1.08e-05   2.57e-04   0.3%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  1.28e-02   0.00e+00   3.96e-06   1.28e-02  16.4%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  7.82e-02   1.08e-04   2.04e-05   7.84e-02 100.0%
+                          99.8%       0.1%       0.0%
