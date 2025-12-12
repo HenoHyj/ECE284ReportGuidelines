@@ -119,10 +119,10 @@ initial begin
   $dumpfile("core_tb.vcd");
   $dumpvars(0,core_tb);
 
-  part3_vector_handle = $fopen("../../software/part3/input.txt", "r");
+  part3_vector_handle = $fopen("../datafiles/input.txt", "r");
   if (part3_vector_handle == 0) begin
     has_part3_vectors = 0;
-    $display("############ Part3 OS run skipped: missing ../../software/part3/input.txt ############");
+    $display("############ Part3 OS run skipped: missing ../datafiles/input.txt ############");
   end else begin
     has_part3_vectors = 1;
     $display("############ Part3 OS stimulus detected; OS run will be executed after WS run ############");
@@ -131,7 +131,7 @@ initial begin
 
   // ========== WS RUN ==========
 
-  x_file = $fopen("../../software/part1/activation.txt", "r");
+  x_file = $fopen("../datafiles/activation.txt", "r");
   x_scan_file = $fscanf(x_file,"%s", captured_data);
   x_scan_file = $fscanf(x_file,"%s", captured_data);
   x_scan_file = $fscanf(x_file,"%s", captured_data);
@@ -160,15 +160,15 @@ initial begin
   for (kij=0; kij<9; kij=kij+1) begin
 
     case(kij)
-     0: w_file_name = "../../software/part1/weight_0.txt";
-     1: w_file_name = "../../software/part1/weight_1.txt";
-     2: w_file_name = "../../software/part1/weight_2.txt";
-     3: w_file_name = "../../software/part1/weight_3.txt";
-     4: w_file_name = "../../software/part1/weight_4.txt";
-     5: w_file_name = "../../software/part1/weight_5.txt";
-     6: w_file_name = "../../software/part1/weight_6.txt";
-     7: w_file_name = "../../software/part1/weight_7.txt";
-     8: w_file_name = "../../software/part1/weight_8.txt";
+     0: w_file_name = "../datafiles/weight_0.txt";
+     1: w_file_name = "../datafiles/weight_1.txt";
+     2: w_file_name = "../datafiles/weight_2.txt";
+     3: w_file_name = "../datafiles/weight_3.txt";
+     4: w_file_name = "../datafiles/weight_4.txt";
+     5: w_file_name = "../datafiles/weight_5.txt";
+     6: w_file_name = "../datafiles/weight_6.txt";
+     7: w_file_name = "../datafiles/weight_7.txt";
+     8: w_file_name = "../datafiles/weight_8.txt";
     endcase
 
     w_file = $fopen(w_file_name, "r");
@@ -308,7 +308,7 @@ initial begin
   end  // kij loop
 
   // Verification
-  out_file = $fopen("../../software/part1/output.txt", "r");
+  out_file = $fopen("../datafiles/output.txt", "r");
 
   if (out_file == 0) begin
     $display("############ Skipping verification: missing output.txt ##############");
@@ -397,9 +397,9 @@ initial begin
       pmem_shadow[t] = {psum_bw*col{1'b0}};
     end
 
-    x_file = $fopen("../../software/part3/activation.txt", "r");
+    x_file = $fopen("../datafiles/activation.txt", "r");
     if (x_file == 0) begin
-      $display("############ OS run aborted: missing ../../software/part3/activation.txt ############");
+      $display("############ OS run aborted: missing ../datafiles/activation.txt ############");
     end else begin
       x_scan_file = $fscanf(x_file,"%s", captured_data);
       x_scan_file = $fscanf(x_file,"%s", captured_data);
@@ -433,15 +433,15 @@ initial begin
       for (kij=0; kij<9; kij=kij+1) begin
 
         case(kij)
-         0: w_file_name = "../../software/part3/weight_0.txt";
-         1: w_file_name = "../../software/part3/weight_1.txt";
-         2: w_file_name = "../../software/part3/weight_2.txt";
-         3: w_file_name = "../../software/part3/weight_3.txt";
-         4: w_file_name = "../../software/part3/weight_4.txt";
-         5: w_file_name = "../../software/part3/weight_5.txt";
-         6: w_file_name = "../../software/part3/weight_6.txt";
-         7: w_file_name = "../../software/part3/weight_7.txt";
-         8: w_file_name = "../../software/part3/weight_8.txt";
+         0: w_file_name = "../datafiles/weight_0.txt";
+         1: w_file_name = "../datafiles/weight_1.txt";
+         2: w_file_name = "../datafiles/weight_2.txt";
+         3: w_file_name = "../datafiles/weight_3.txt";
+         4: w_file_name = "../datafiles/weight_4.txt";
+         5: w_file_name = "../datafiles/weight_5.txt";
+         6: w_file_name = "../datafiles/weight_6.txt";
+         7: w_file_name = "../datafiles/weight_7.txt";
+         8: w_file_name = "../datafiles/weight_8.txt";
         endcase
 
         w_file = $fopen(w_file_name, "r");
@@ -627,10 +627,10 @@ initial begin
       end // kij loop
 
       // OS Verification
-      out_file = $fopen("../../software/part3/output.txt", "r");
+      out_file = $fopen("../datafiles/output.txt", "r");
 
       if (out_file == 0) begin
-        $display("############ Skipping OS verification: missing ../../software/part3/output.txt ##############");
+        $display("############ Skipping OS verification: missing ../datafiles/output.txt ##############");
       end else begin
         out_scan_file = $fscanf(out_file,"%s", answer);
         out_scan_file = $fscanf(out_file,"%s", answer);

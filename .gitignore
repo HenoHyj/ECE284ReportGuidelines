@@ -1,0 +1,70 @@
+############################################
+# Verilog / SystemVerilog simulation outputs
+############################################
+*.vcd
+*.vpd
+*.fst
+*.lxt
+*.lxt2
+*.wlf
+*.dump
+*.log
+
+# GTKWave save files
+*.gtkw
+*.sav
+
+############################################
+# Icarus Verilog / vvp outputs
+############################################
+*.vvp
+*.vpi
+a.out
+
+# Common build / sim output directories (if you use them)
+build/
+out/
+sim_build/
+sim_out/
+work/
+tmp/
+
+############################################
+# Other HDL tool artifacts (safe to ignore)
+############################################
+*.jou
+*.str
+*.pb
+*.dmp
+*.vcd.gz
+
+############################################
+# OS / Editor junk
+############################################
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+
+############################################
+# Python / misc (if your flow uses scripts)
+############################################
+__pycache__/
+*.pyc
+.venv/
+venv/
