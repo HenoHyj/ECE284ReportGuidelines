@@ -11,15 +11,8 @@
 Navigate to the simulation directory and run:
 ```bash
 cd hardware/sim
-iverilog -o sim.vvp -f filelist
+iverilog -g2012 -o sim.vvp -f filelist
 vvp sim.vvp
-```
-
-Or using commercial tools:
-```bash
-cd hardware/sim
-iveri filelist
-irun
 ```
 
 The testbench exercises both 4-bit-activation and 2-bit-activation modes automatically.
