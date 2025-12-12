@@ -5,12 +5,6 @@ This folder contains three subfolders:
 - `datafiles/` : weight, activation and psum files used by the testbench.
 - `sim/` : contains the `filelist` (plain text, no extension) and any simulation scripts or testbenches.
 
-To run the automated checks (TAs will do):
-```pwsh
-cd Part1_Vanilla/hardware/sim
-iveri filelist
-irun
-```
 
 Notes:
 - `filelist` must list relative paths to the sources in `../verilog/`.
