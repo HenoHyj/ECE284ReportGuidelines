@@ -7,7 +7,7 @@ This folder contains three subfolders:
 
 Run steps (for reference):
 ```pwsh
-cd Part2_SIMD/hardware/sim
+cd Part1_Vanilla/hardware/sim
 iverilog -g2012 -o sim.vvp -f filelist
 vvp sim.vvp
 ```
