@@ -113,7 +113,7 @@ initial begin
   $dumpfile("core_tb.vcd");
   $dumpvars(0,core_tb);
 
-  x_file = $fopen("../../software/part1/activation.txt", "r");
+  x_file = $fopen("../datafiles/activation.txt", "r");
   // Following three lines are to remove the first three comment lines of the file
   x_scan_file = $fscanf(x_file,"%s", captured_data);
   x_scan_file = $fscanf(x_file,"%s", captured_data);
@@ -151,15 +151,15 @@ initial begin
   for (kij=0; kij<9; kij=kij+1) begin  // kij loop
 
     case(kij)
-     0: w_file_name = "../../software/part1/weight_0.txt";
-     1: w_file_name = "../../software/part1/weight_1.txt";
-     2: w_file_name = "../../software/part1/weight_2.txt";
-     3: w_file_name = "../../software/part1/weight_3.txt";
-     4: w_file_name = "../../software/part1/weight_4.txt";
-     5: w_file_name = "../../software/part1/weight_5.txt";
-     6: w_file_name = "../../software/part1/weight_6.txt";
-     7: w_file_name = "../../software/part1/weight_7.txt";
-     8: w_file_name = "../../software/part1/weight_8.txt";
+     0: w_file_name = "../datafiles/weight_0.txt";
+     1: w_file_name = "../datafiles/weight_1.txt";
+     2: w_file_name = "../datafiles/weight_2.txt";
+     3: w_file_name = "../datafiles/weight_3.txt";
+     4: w_file_name = "../datafiles/weight_4.txt";
+     5: w_file_name = "../datafiles/weight_5.txt";
+     6: w_file_name = "../datafiles/weight_6.txt";
+     7: w_file_name = "../datafiles/weight_7.txt";
+     8: w_file_name = "../datafiles/weight_8.txt";
     endcase
     
 
@@ -340,7 +340,7 @@ initial begin
 
 
   ////////// Accumulation (testbench-only) /////////
-  out_file = $fopen("../../software/part1/output.txt", "r");  
+  out_file = $fopen("../datafiles/output.txt", "r");  
 
   if (out_file == 0) begin
     $display("############ Skipping verification: missing output.txt ##############");
