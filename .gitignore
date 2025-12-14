@@ -19,7 +19,7 @@
 ############################################
 *.vvp
 *.vpi
-a.out
+*.out
 
 # Common build / sim output directories (if you use them)
 build/

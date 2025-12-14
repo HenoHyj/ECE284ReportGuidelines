@@ -73,6 +73,43 @@ integer t, i, j, k, kij;
 integer error;
 integer part2_vector_handle;
 
+// Variables for golden verification
+reg [255:0] golden_256b;
+reg [127:0] golden_128b;
+reg [127:0] golden_relu;
+reg signed [15:0] golden_ch;
+integer err_golden;
+integer idx_g, o_nij_g, psum_nij_g;
+
+// Variables for weight loading
+reg [31:0] w_lines [0:7];
+reg [31:0] w_transposed [0:7];
+reg [3:0] w_nibble;
+integer wi, wj;
+reg [psum_bw-1:0] relu_val;
+
+// Variables for 2-bit activation loading
+reg [15:0] act_tile0 [0:len_nij-1];
+reg [15:0] act_tile1 [0:len_nij-1];
+reg [31:0] act_packed;
+reg [1:0] val0, val1;
+
+// Variables for 2-bit weight loading
+reg [31:0] w_lines_b0 [0:7];
+reg [31:0] w_lines_b1 [0:7];
+reg [31:0] w_transposed_b0 [0:7];
+reg [31:0] w_transposed_b1 [0:7];
+reg [31:0] w_interleaved [0:15];
+
+// Variables for convolution indexing
+integer idx, o_nij, psum_nij;
+integer o_ni_dim, a_pad_ni_dim, ki_dim;
+
+// Variables for 2-bit mode verification
+reg signed [psum_bw-1:0] psum_2b [0:col-1];
+reg signed [psum_bw-1:0] slice_2b;
+reg [psum_bw*col-1:0] computed_2b;
+
 assign inst_q[34] = mode_2b_q;
 assign inst_q[33] = acc_q;
 assign inst_q[32] = CEN_pmem_q;
@@ -117,16 +154,7 @@ initial begin
   $dumpfile("core_tb.vcd");
   $dumpvars(0,core_tb);
 
-  // Quick check for Part2 stimulus; skip 2-bit run gracefully if files are missing
-  part2_vector_handle = $fopen("../datafiles/activation_2b.txt", "r");
-  if (part2_vector_handle == 0) begin
-    $display("############ Skipping 2-bit SIMD run: missing ../datafiles/activation_2b.txt ############");
-  end else begin
-    $display("############ 2-bit SIMD stimulus detected; plug into TB flow when available ############");
-    $fclose(part2_vector_handle);
-  end
-
-  x_file = $fopen("../datafiles/activation.txt", "r");
+  x_file = $fopen("../../../Part1_Vanilla/hardware/datafiles/activation.txt", "r");
   // Following three lines are to remove the first three comment lines of the file
   x_scan_file = $fscanf(x_file,"%s", captured_data);
   x_scan_file = $fscanf(x_file,"%s", captured_data);
@@ -164,15 +192,15 @@ initial begin
   for (kij=0; kij<9; kij=kij+1) begin  // kij loop
 
     case(kij)
-     0: w_file_name = "../datafiles/weight_0.txt";
-     1: w_file_name = "../datafiles/weight_1.txt";
-     2: w_file_name = "../datafiles/weight_2.txt";
-     3: w_file_name = "../datafiles/weight_3.txt";
-     4: w_file_name = "../datafiles/weight_4.txt";
-     5: w_file_name = "../datafiles/weight_5.txt";
-     6: w_file_name = "../datafiles/weight_6.txt";
-     7: w_file_name = "../datafiles/weight_7.txt";
-     8: w_file_name = "../datafiles/weight_8.txt";
+     0: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_0.txt";
+     1: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_1.txt";
+     2: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_2.txt";
+     3: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_3.txt";
+     4: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_4.txt";
+     5: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_5.txt";
+     6: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_6.txt";
+     7: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_7.txt";
+     8: w_file_name = "../../../Part1_Vanilla/hardware/datafiles/weight_8.txt";
     endcase
     
 
@@ -201,13 +229,6 @@ initial begin
 
 
     /////// Kernel data writing to memory (transposed) ///////
-    begin
-      reg [31:0] w_lines [0:7];  // Store all 8 weight lines
-      reg [31:0] w_transposed [0:7];  // Transposed weights
-      reg [3:0] w_nibble;
-      integer wi, wj;
-
-      // Read all 8 weight lines into buffer
       for (wi=0; wi<col; wi=wi+1) begin
         w_scan_file = $fscanf(w_file, "%32b", w_lines[wi]);
       end
@@ -230,7 +251,6 @@ initial begin
         #0.5 clk = 1'b0; D_xmem = w_transposed[t]; WEN_xmem = 0; CEN_xmem = 0; if (t>0) A_xmem = A_xmem + 1;
         #0.5 clk = 1'b1;
       end
-    end
 
     #0.5 clk = 1'b0;  WEN_xmem = 1;  CEN_xmem = 1; A_xmem = 0;
     #0.5 clk = 1'b1;
@@ -353,7 +373,7 @@ initial begin
 
 
   ////////// Accumulation (testbench-only) /////////
-  out_file = $fopen("../datafiles/output.txt", "r");  
+  out_file = $fopen("../../../Part1_Vanilla/hardware/datafiles/output.txt", "r");  
 
   if (out_file == 0) begin
     $display("############ Skipping verification: missing output.txt ##############");
@@ -374,31 +394,16 @@ initial begin
       // accumulate across kij for each column (reverse order to match output.txt row ordering)
       for (k=0; k<col; k=k+1) acc_cols[k] = 0;
 
+      o_ni_dim = 4;
+      a_pad_ni_dim = 6;
+      ki_dim = 3;
+
       for (kij=0; kij<len_kij; kij=kij+1) begin
         for (k=0; k<col; k=k+1) begin
-          integer idx;
-          integer o_nij;
-          integer psum_nij;
-          integer o_ni_dim;     // output spatial dimension.   (4 for 4x4)
-          integer a_pad_ni_dim; // activation padded dimension (6 for 6x6)
-          integer ki_dim;       // kernel spatial dimension    (3 for 3x3)
-
-          // 2D convolution indexing:
-          // For output o_nij and kernel position kij, the activation index is:
-          // psum_nij = (o_nij/o_ni_dim)*a_pad_ni_dim + (o_nij%o_ni_dim) + (kij/ki_dim)*a_pad_ni_dim + (kij%ki_dim)
-          o_ni_dim = 4;       // 4x4 output
-          a_pad_ni_dim = 6;   // 6x6 activation (with padding for 3x3 kernel)
-          ki_dim = 3;         // 3x3 kernel
-
-          o_nij = i - 1;  // 0-indexed output position
+          o_nij = i - 1;
           psum_nij = (o_nij / o_ni_dim) * a_pad_ni_dim + (o_nij % o_ni_dim) +
                      (kij / ki_dim) * a_pad_ni_dim + (kij % ki_dim);
-
-          // Direct index: psum_nij maps to captured OFIFO index with per-column offset
-          // Column c has pipeline delay of (5-c) cycles: CAP_index = activation_index - (5-c)
-          // k is the column index, so offset = 5 - k
           idx = kij * len_nij + ((psum_nij + len_nij - (5 - k)) % len_nij);
-          // sfp_out packing: col0 at LSB (bits 15:0), col7 at MSB
           slice = (pmem_shadow[idx] >> (k*psum_bw));
           acc_cols[k] = acc_cols[k] + slice;
         end
@@ -407,7 +412,6 @@ initial begin
       // ReLU and pack
       computed = 0;
       for (k=0; k<col; k=k+1) begin
-        reg [psum_bw-1:0] relu_val;
         if (acc_cols[k][psum_bw-1] == 1'b1)
           relu_val = {psum_bw{1'b0}};
         else
@@ -415,8 +419,9 @@ initial begin
         computed = computed | (relu_val << (k*psum_bw));
       end
 
+      if (i == 1) $display("4-bit mode: computed[0] = %h", computed);
       if (computed == answer)
-        $display("%2d-th output featuremap Data matched! :D", i); 
+        $display("%2d-th output featuremap Data matched! :D", i);
       else begin
         $display("%2d-th output featuremap Data ERROR!!", i); 
         $display("computed: %128b", computed);
@@ -435,9 +440,332 @@ initial begin
   end
   //////////////////////////////////
 
-  for (t=0; t<10; t=t+1) begin  
-    #0.5 clk = 1'b0;  
-    #0.5 clk = 1'b1;  
+  for (t=0; t<10; t=t+1) begin
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
+  end
+
+  ////////// 2-bit SIMD Mode Test (Part2 specific) /////////
+  // Uses Part2's activation_2b.txt (16-bit, 2-bit per channel) and Part2's weights
+  $display("############ Starting 2-bit SIMD Mode Test ############");
+
+  mode_2b = 1;  // Enable 2-bit SIMD mode
+
+  // Read 2-bit activation file and pack into 32-bit format
+  // activation_2b.txt: 16 bits = 8 channels × 2 bits each
+  // Hardware expects: 32 bits = 8 channels × 4 bits each
+  // Pack: each 2-bit value goes to a[1:0], a[3:2] = 0
+  x_file = $fopen("../datafiles/activation_2b.txt", "r");
+  // Following three lines are to remove the first three comment lines of the file
+  x_scan_file = $fscanf(x_file,"%s", captured_data);
+  x_scan_file = $fscanf(x_file,"%s", captured_data);
+  x_scan_file = $fscanf(x_file,"%s", captured_data);
+
+  //////// Reset /////////
+  #0.5 clk = 1'b0;   reset = 1;
+  #0.5 clk = 1'b1;
+
+  for (i=0; i<10 ; i=i+1) begin
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
+  end
+
+  #0.5 clk = 1'b0;   reset = 0;
+  #0.5 clk = 1'b1;
+
+  #0.5 clk = 1'b0;
+  #0.5 clk = 1'b1;
+  /////////////////////////
+
+  /////// Activation data writing to memory (pack tile0 + tile1) ///////
+    for (t=0; t<len_nij; t=t+1) begin
+      x_scan_file = $fscanf(x_file,"%16b", act_tile0[t]);
+    end
+    for (t=0; t<len_nij; t=t+1) begin
+      x_scan_file = $fscanf(x_file,"%16b", act_tile1[t]);
+    end
+
+    for (t=0; t<len_nij; t=t+1) begin
+      act_packed = 0;
+      for (j=0; j<8; j=j+1) begin
+        val0 = (act_tile0[t] >> (j*2)) & 2'b11;
+        val1 = (act_tile1[t] >> (j*2)) & 2'b11;
+        act_packed = act_packed | (({val1, val0}) << (j*4));
+      end
+      #0.5 clk = 1'b0; D_xmem = act_packed; WEN_xmem = 0; CEN_xmem = 0; if (t>0) A_xmem = A_xmem + 1;
+      #0.5 clk = 1'b1;
+    end
+
+  #0.5 clk = 1'b0;  WEN_xmem = 1;  CEN_xmem = 1; A_xmem = 0;
+  #0.5 clk = 1'b1;
+
+  $fclose(x_file);
+  /////////////////////////////////////////////////
+
+
+  for (kij=0; kij<9; kij=kij+1) begin  // kij loop
+
+    // Use Part2's weight files
+    case(kij)
+     0: w_file_name = "../datafiles/weight_0.txt";
+     1: w_file_name = "../datafiles/weight_1.txt";
+     2: w_file_name = "../datafiles/weight_2.txt";
+     3: w_file_name = "../datafiles/weight_3.txt";
+     4: w_file_name = "../datafiles/weight_4.txt";
+     5: w_file_name = "../datafiles/weight_5.txt";
+     6: w_file_name = "../datafiles/weight_6.txt";
+     7: w_file_name = "../datafiles/weight_7.txt";
+     8: w_file_name = "../datafiles/weight_8.txt";
+    endcase
+
+
+    w_file = $fopen(w_file_name, "r");
+    // Following three lines are to remove the first three comment lines of the file
+    w_scan_file = $fscanf(w_file,"%s", captured_data);
+    w_scan_file = $fscanf(w_file,"%s", captured_data);
+    w_scan_file = $fscanf(w_file,"%s", captured_data);
+
+    #0.5 clk = 1'b0;   reset = 1;
+    #0.5 clk = 1'b1;
+
+    for (i=0; i<10 ; i=i+1) begin
+      #0.5 clk = 1'b0;
+      #0.5 clk = 1'b1;
+    end
+
+    #0.5 clk = 1'b0;   reset = 0;
+    #0.5 clk = 1'b1;
+
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
+
+
+    /////// Kernel data writing to memory (transposed, 16 weights for 2-bit mode) ///////
+      for (wi=0; wi<col; wi=wi+1) begin
+        w_scan_file = $fscanf(w_file, "%32b", w_lines_b0[wi]);
+      end
+      for (wi=0; wi<col; wi=wi+1) begin
+        w_scan_file = $fscanf(w_file, "%32b", w_lines_b1[wi]);
+      end
+
+      for (wi=0; wi<col; wi=wi+1) begin
+        w_transposed_b0[wi] = 0;
+        for (wj=0; wj<row; wj=wj+1) begin
+          w_nibble = (w_lines_b0[wj] >> (4*wi)) & 4'hF;
+          w_transposed_b0[wi] = w_transposed_b0[wi] | (w_nibble << (4*wj));
+        end
+      end
+
+      for (wi=0; wi<col; wi=wi+1) begin
+        w_transposed_b1[wi] = 0;
+        for (wj=0; wj<row; wj=wj+1) begin
+          w_nibble = (w_lines_b1[wj] >> (4*wi)) & 4'hF;
+          w_transposed_b1[wi] = w_transposed_b1[wi] | (w_nibble << (4*wj));
+        end
+      end
+
+      for (wi=0; wi<col; wi=wi+1) begin
+        w_interleaved[wi*2]     = w_transposed_b0[wi];
+        w_interleaved[wi*2 + 1] = w_transposed_b1[wi];
+      end
+
+      A_xmem = 11'b10000000000;
+      for (t=0; t<col*2; t=t+1) begin
+        #0.5 clk = 1'b0; D_xmem = w_interleaved[t]; WEN_xmem = 0; CEN_xmem = 0; if (t>0) A_xmem = A_xmem + 1;
+        #0.5 clk = 1'b1;
+      end
+
+    #0.5 clk = 1'b0;  WEN_xmem = 1;  CEN_xmem = 1; A_xmem = 0;
+    #0.5 clk = 1'b1;
+    /////////////////////////////////////
+
+
+
+    /////// Kernel data writing to L0 (16 weights for 2-bit mode) ///////
+    A_xmem = 11'b10000000000;
+
+    // Prime XMEM with first address
+    #0.5 clk = 1'b0; CEN_xmem = 0; WEN_xmem = 1; l0_wr = 0;
+    #0.5 clk = 1'b1;
+
+    // Read from XMEM while writing to L0 (16 weights)
+    for (t=0; t<col*2; t=t+1) begin
+      #0.5 clk = 1'b0; CEN_xmem = 0; WEN_xmem = 1; l0_wr = 1; A_xmem = 11'b10000000000 + t + 1;
+      #0.5 clk = 1'b1;
+    end
+
+    // One more L0 write to capture last data
+    #0.5 clk = 1'b0; l0_wr = 1; CEN_xmem = 1; WEN_xmem = 1;
+    #0.5 clk = 1'b1;
+
+    #0.5 clk = 1'b0; l0_wr = 0; CEN_xmem = 1; A_xmem = 0;
+    #0.5 clk = 1'b1;
+    /////////////////////////////////////
+
+
+
+    /////// Kernel loading to PEs (16 weights for 2-bit mode: 8 for b0, 8 for b1) ///////
+    for (t=0; t<col*2; t=t+1) begin
+      #0.5 clk = 1'b0; load = 1; l0_rd = 1;
+      #0.5 clk = 1'b1;
+    end
+
+    // Extra cycles to let instruction propagate through all columns
+    for (t=0; t<col+4; t=t+1) begin
+      #0.5 clk = 1'b0; load = 1; l0_rd = 0;
+      #0.5 clk = 1'b1;
+    end
+    /////////////////////////////////////
+
+
+
+    ////// provide some intermission to clear up the kernel loading ///
+    #0.5 clk = 1'b0;  load = 0; l0_rd = 0;
+    #0.5 clk = 1'b1;
+
+
+    for (i=0; i<10 ; i=i+1) begin
+      #0.5 clk = 1'b0;
+      #0.5 clk = 1'b1;
+    end
+    /////////////////////////////////////
+
+
+
+    /////// Activation data writing to L0 ///////
+    A_xmem = 0;
+
+    for (t=0; t<len_nij; t=t+1) begin
+      #0.5 clk = 1'b0; CEN_xmem = 0; WEN_xmem = 1; l0_wr = 1; if (t>0) A_xmem = A_xmem + 1;
+      #0.5 clk = 1'b1;
+    end
+
+    #0.5 clk = 1'b0; l0_wr = 0; CEN_xmem = 1; WEN_xmem = 1; A_xmem = 0;
+    #0.5 clk = 1'b1;
+    /////////////////////////////////////
+
+
+
+    /////// Execution ///////
+    for (t=0; t<len_nij; t=t+1) begin
+      #0.5 clk = 1'b0; execute = 1; l0_rd = 1;
+      #0.5 clk = 1'b1;
+    end
+
+    // Drain the pipeline
+    for (t=0; t<row+col; t=t+1) begin
+      #0.5 clk = 1'b0; execute = 1; l0_rd = 0;
+      #0.5 clk = 1'b1;
+    end
+
+    #0.5 clk = 1'b0; execute = 0;
+    #0.5 clk = 1'b1;
+
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
+    /////////////////////////////////////
+
+
+    //////// OFIFO READ ////////
+    // Prime the OFIFO read pipeline
+    #0.5 clk = 1'b0; ofifo_rd = 1;
+    #0.5 clk = 1'b1;
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
+
+    // Now read and capture len_nij entries
+    for (t=0; t<len_nij; t=t+1) begin
+      pmem_shadow[kij*len_nij + t] = core_instance.ofifo_out;
+      #0.5 clk = 1'b0;
+      #0.5 clk = 1'b1;
+    end
+
+    #0.5 clk = 1'b0; ofifo_rd = 0;
+    #0.5 clk = 1'b1;
+    /////////////////////////////////////
+
+    $display("2b: kij %0d captured %0d entries from OFIFO", kij, len_nij);
+    /////////////////////////////////////
+
+
+  end  // end of kij loop
+
+
+  ////////// 2-bit SIMD Verification against golden output.txt /////////
+  out_file = $fopen("../datafiles/output.txt", "r");
+  if (out_file == 0) begin
+    $display("WARNING: Could not open Part2 output.txt for golden comparison");
+  end else begin
+    out_scan_file = $fscanf(out_file,"%s", answer);
+    out_scan_file = $fscanf(out_file,"%s", answer);
+    out_scan_file = $fscanf(out_file,"%s", answer);
+
+    err_golden = 0;
+    $display("############ Verifying against Part2 output.txt (lower 128 bits) #############");
+
+    for (i=1; i<len_onij+1; i=i+1) begin
+      out_scan_file = $fscanf(out_file,"%256b", golden_256b);
+      golden_128b = golden_256b[127:0];
+
+      golden_relu = 0;
+      for (k=0; k<col; k=k+1) begin
+        golden_ch = golden_128b[k*16 +: 16];
+        if (golden_ch[15] == 1'b1)
+          golden_relu[k*16 +: 16] = 16'b0;
+        else
+          golden_relu[k*16 +: 16] = golden_ch;
+      end
+
+      for (k=0; k<col; k=k+1) psum_2b[k] = 0;
+
+      for (kij=0; kij<len_kij; kij=kij+1) begin
+        for (k=0; k<col; k=k+1) begin
+          o_nij_g = i - 1;
+          psum_nij_g = (o_nij_g / 4) * 6 + (o_nij_g % 4) + (kij / 3) * 6 + (kij % 3);
+          idx_g = kij * len_nij + ((psum_nij_g + len_nij - (5 - k)) % len_nij);
+          slice_2b = (pmem_shadow[idx_g] >> (k*psum_bw));
+          psum_2b[k] = psum_2b[k] + slice_2b;
+        end
+      end
+
+      computed_2b = 0;
+      for (k=0; k<col; k=k+1) begin
+        if (psum_2b[k][psum_bw-1] == 1'b1)
+          computed_2b = computed_2b | ({psum_bw{1'b0}} << (k*psum_bw));
+        else
+          computed_2b = computed_2b | (psum_2b[k] << (k*psum_bw));
+      end
+
+      if (computed_2b == golden_relu)
+        $display("%2d-th 2-bit vs golden Data matched! :D", i);
+      else begin
+        $display("%2d-th 2-bit vs golden Data MISMATCH", i);
+        $display("  HW computed: %h", computed_2b);
+        $display("  Golden+ReLU: %h", golden_relu);
+        err_golden = 1;
+      end
+    end
+
+    $fclose(out_file);
+
+    if (err_golden == 0) begin
+      $display("############ 2-bit mode matches Part2 golden output! ##############");
+      $display("########### Part2 2-bit SIMD Test FULLY Verified !! ############");
+    end else begin
+      $display("WARNING: Hardware output differs from Part2 golden - investigation needed");
+    end
+  end
+  //////////////////////////////////
+
+  mode_2b = 0;  // Disable 2-bit SIMD mode
+
+  for (t=0; t<10; t=t+1) begin
+    #0.5 clk = 1'b0;
+    #0.5 clk = 1'b1;
   end
 
   #10 $finish;
